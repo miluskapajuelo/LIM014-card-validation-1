@@ -4,11 +4,51 @@
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body> 
+    
+  <div id="inicio" class="display screen">
+    
     <header></header>
+    <h3><center>Ingresa a tu cuenta</center></h3>
+    <input type="text" id = "card" name="Número de tarjeta" placeholder="Número de tarjeta"  class="display screen" autocomplete="off"><br>
+    <br>
+    <select name="documento" id="documento" >
+      <option value="1">DNI</option>
+      <option value="2">CE</option>
+      <option value="2">PASS</option>
+    </select>
+    <input type="text" id = "dni" name="Número de documento" placeholder="Número de documento" autocomplete="off"><br>
+    <br>
+    <br>
+    <input type="button" value = "Validar" id="validar" >
+    <br>
+    <br>
+    <input type="checkbox" name = "recordar" value="Recordar los datos"><label>Recordar los datos</label>
     <main></main>
-    <footer></footer>
+    <br>
+    <br>
+    <br> 
+    <footer><center>Ingresa | Registrate | Ayuda</center></footer>
     <script src="index.js" type="module"></script>
-  </body>
+  </div>
+
+<div id="incorrecto" class="hide screen">
+    <header></header>
+    <h2>Intentalo de nuevo</h2>
+    <p>Los datos ingresados son incorrectos</p>
+
+    <input type="button" value = "Entendido" id="entendido1">
+</div>  
+
+
+<div id="correcto" class="hide screen">
+    <header></header>
+    <h2>¡Felicidades!</h2>
+    <p>Los datos ingresados son correctos</p>
+
+    <input type="button" value = "Entendido" id="entendido2">
+</div>  
+</body>
 </html>

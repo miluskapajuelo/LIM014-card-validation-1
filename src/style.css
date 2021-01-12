@@ -1,0 +1,64 @@
+.display {
+    display: block;
+  }
+.hide {
+    display: none;
+  }
+  body{
+    width: 800px;
+    margin: 100px;
+    background-color: white;
+    border: 0px solid white;
+    font-family: 'Raleway', sans-serif;
+    background-image: url("playa.png");    
+    background-size:cover;
+
+}
+
+.screen {
+    background: #FFFFFF;
+    border-radius: 1.5%;
+    margin-top: 40px;
+    width: 40%;
+    padding: 20px
+   
+  }
+#validar, #entendido1, #entendido2 {
+    border-radius: 1.5px;
+    background-color: #cac35d; 
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    margin: 1em;
+    outline: none;
+    margin-left: 200px;
+    width: 100px;
+  }
+
+#card{
+    margin-top: 40px;
+    width: 91%;
+    padding: 3px;
+    border:none;
+    border-bottom:1px solid;
+    border-color: slategray;
+    outline: none
+}
+
+#dni{
+    margin-top: 10px;
+    width: 70%;
+    padding: 3px;
+    border:none;
+    border-bottom:1px solid;
+    border-color: slategray;
+    outline: none
+}
+
+#documento{
+        margin-top: 10px;
+        width: 20%;
+        padding: 3px;
+        border: none;
+}
