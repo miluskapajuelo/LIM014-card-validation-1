@@ -8,42 +8,65 @@ letsplay.addEventListener("click", press1);
 
 function press1(){
   validacion1 = document.getElementById('card').value;
+  
   if(validacion1){
+    if(validacion1.length<16){
+      alert("Este campo requiere 16 dígitos")
+    }
+    else{
     document.getElementById('validar').innerHTML= validacion1
-    
-    document.getElementById("inicio").classList.add("hide");
-    document.getElementById("inicio").classList.remove("display");
-
-    document.getElementById("incorrecto").classList.add("display");
-    document.getElementById("incorrecto").classList.remove("hide");
-    console.log(typeof(validacion1)) ;
-    var a = validacion1.split("").reverse().join("");
+    }
+      
+    //console.log(typeof(validacion1)) ;
+    var a = validacion1.split("").reverse();
     console.log(a[0]);
     console.log(a[a.length-1]);
     console.log(a.length);
-    var c = Array.from(a);
-    console.log(c);
-    
-    for(var i=0; i<c.length; i++){
+    var total=[];
+
+    for(var i=0; i<a.length; i++){
       if(i%2==0){
-        var d = c[i]*2;
-        if(d >10){
-          console.log(d);
+        var d = a[i]*2;
+        if(d >=10){
+          var f= d.toString();
+          var suma = parseInt(f[0]) +parseInt(f[1]);
         }
         else{
-          console.log("hola mundo")
+          total.push(d); 
         }
       }
-      
+      else{
+        total.push(parseInt(a[i]));
+      }
+     }
+    const guardar = validacion1.slice(-4);
+    console.log("PRUEBA" + validacion1.slice(-4)) ;
+    
+    
+    let sumatotal = 0;
+    total.forEach(function(a){sumatotal += a;});
+    console.log(sumatotal);
+
+    if(sumatotal%10==0){
+      document.getElementById("inicio").classList.add("hide");
+      document.getElementById("inicio").classList.remove("display");
+  
+      document.getElementById("correcto").classList.add("display");
+      document.getElementById("correcto").classList.remove("hide");
+
+      document.getElementById('txtnew1').innerHTML= "La tarjeta es válida" + sumatotal;
+      }
+    else{
+      document.getElementById("inicio").classList.add("hide");
+      document.getElementById("inicio").classList.remove("display");
+  
+      document.getElementById("incorrecto").classList.add("display");
+      document.getElementById("incorrecto").classList.remove("hide");
+
+      document.getElementById('txtnew2').innerHTML= "La tarjeta no es válida " + sumatotal;
+    }
     }
   }
-  else{
-  alert("Debe colocar el dni para iniciar")
-}
-
-    
-  }
-
 
 var retorna;
 var letsplay2 = document.getElementById('entendido1');
@@ -53,6 +76,19 @@ function press2(){
        
     document.getElementById("incorrecto").classList.add("hide");
     document.getElementById("incorrecto").classList.remove("display");
+
+    document.getElementById("inicio").classList.add("display");
+    document.getElementById("inicio").classList.remove("hide");
+}
+
+var retorna2;
+var letsplay3 = document.getElementById('entendido2');
+letsplay3.addEventListener("click", press3);
+
+function press3(){
+       
+    document.getElementById("correcto").classList.add("hide");
+    document.getElementById("correcto").classList.remove("display");
 
     document.getElementById("inicio").classList.add("display");
     document.getElementById("inicio").classList.remove("hide");
