@@ -12,6 +12,7 @@ function press1(){
   if(validacion1){
     if(validacion1.length<16){
       alert("Este campo requiere 16 dígitos")
+      
     }
     else{
     document.getElementById('validar').innerHTML= validacion1
@@ -81,7 +82,7 @@ function press2(){
     document.getElementById("inicio").classList.remove("hide");
 }
 
-var retorna2;
+
 var letsplay3 = document.getElementById('entendido2');
 letsplay3.addEventListener("click", press3);
 
@@ -105,3 +106,18 @@ card.addEventListener("keypress", function soloNumeros(e){
     })
 
 
+var mostrar= false;
+var eye = document.getElementById("eye");
+
+eye.addEventListener("click", function toggle(){
+  
+  if(mostrar){
+    document.getElementById("card").setAttribute("type","password");
+    mostrar=false;
+  }   
+  else{
+    var ese = document.getElementById("card").value.slice(-4);
+    document.getElementById("card").setAttribute("type","text");
+    mostrar=true;
+  } 
+})
