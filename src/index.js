@@ -55,7 +55,7 @@ function press1(){
       document.getElementById("correcto").classList.add("display");
       document.getElementById("correcto").classList.remove("hide");
 
-      document.getElementById('txtnew1').innerHTML= "La tarjeta es válida" + sumatotal;
+      document.getElementById('txtnew1').innerHTML= "La tarjeta es válida";
       }
     else{
       document.getElementById("inicio").classList.add("hide");
@@ -64,7 +64,7 @@ function press1(){
       document.getElementById("incorrecto").classList.add("display");
       document.getElementById("incorrecto").classList.remove("hide");
 
-      document.getElementById('txtnew2').innerHTML= "La tarjeta no es válida " + sumatotal;
+      document.getElementById('txtnew2').innerHTML= "La tarjeta no es válida ";
     }
     }
   }
@@ -96,12 +96,19 @@ function press3(){
 }
 
 var card = document.getElementById("card");
-var hola = [];
-var NameValues=[];
 card.addEventListener("keypress", function soloNumeros(e){
       var key = card.event ? e.which : e.keyCode;
       if (key < 48 || key > 57) {
         e.preventDefault();
+       }
+    })
+
+
+var dni = document.getElementById("dni");
+dni.addEventListener("keypress", function soloNumeros(o){
+      var key1 = dni.event ? o.which : o.keyCode;
+      if (key1 < 48 || key1 > 57) {
+        o.preventDefault();
        }
     })
 
@@ -116,8 +123,8 @@ eye.addEventListener("click", function toggle(){
     mostrar=false;
   }   
   else{
-    var ese = document.getElementById("card").value.slice(-4);
     document.getElementById("card").setAttribute("type","text");
     mostrar=true;
   } 
 })
+

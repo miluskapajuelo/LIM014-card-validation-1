@@ -85,7 +85,7 @@
 span{
   position: absolute;
   left: 393px;
-  top: 33%;
+  top: 34%;
   cursor: pointer;
 }
 
@@ -93,3 +93,8 @@ span{
   font-size: 20px;
   color: #aaa549;
 }
+footer{
+  color: #8d9247;
+}
+
+
