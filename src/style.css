@@ -4,17 +4,18 @@
 .hide {
     display: none;
   }
-  body{
-    width: 800px;
+body{
+    width: 730px;
     margin: 100px;
     background-color: white;
     border: 0px solid white;
     font-family: 'Raleway', sans-serif;
-    background-image: url("playa.png");    
-    background-size:cover;
-
+    background-image: url("playita.png");    
+    background-size:auto;
+  }
+h3{
+  color: rgb(9, 51, 9);
 }
-
 .screen {
     background: #FFFFFF;
     border-radius: 1.5%;
@@ -25,14 +26,14 @@
   }
 #validar, #entendido1, #entendido2 {
     border-radius: 1.5px;
-    background-color: #cac35d; 
+    background-color: #ada209e8; 
     color: #fff;
     padding: 10px;
     font-weight: bold;
     border: none;
     margin: 1em;
     outline: none;
-    margin-left: 200px;
+    margin-left: 174px;
     width: 100px;
     cursor: pointer;
     transition: all 0.3s;
@@ -84,7 +85,7 @@
 
 span{
   position: absolute;
-  left: 393px;
+  left: 370px;
   top: 34%;
   cursor: pointer;
 }
@@ -93,8 +94,3 @@ span{
   font-size: 20px;
   color: #aaa549;
 }
-footer{
-  color: #8d9247;
-}
-
-

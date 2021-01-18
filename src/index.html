@@ -13,30 +13,29 @@
     
     <header></header>
     <h3><center>Ingresa a tu cuenta</center></h3>
-    <input type="password" id = "card"  placeholder="Número de tarjeta" maxlength= "16" autocomplete="off">
+    <form>
+    <input type="password" id = "card"  placeholder="Número de tarjeta" maxlength= "16"  autocomplete="off" required>
+    <!--<p id="mensaje1"></p>-->
     <span>
       <i class="fa fa-eye" aria-hidden="true" id="eye"></i>
-    </span>
+    </span>  
     <br>
     <br>
-    <br>
-  
     <select name="documento" id="documento" >
       <option value="1">DNI</option>
       <option value="2">CE</option>
       <option value="2">PASS</option>
     </select>
-    <input type="text" id = "dni" name="dni" maxlength="8" placeholder="Número de documento" autocomplete="off" required><br>
+    <input type="text" id = "dni" name="dni" maxlength="8"  placeholder="Número de documento" autocomplete="off" required><br>
     <br>
-    <br>
-    <input type="button" value = "validar" id="validar">
+    <input type="button" value = "validar" id="validar" >
     <br>
     <br>
     <input type="checkbox" name = "recordar" value="Recordar los datos"><label>Recordar los datos</label>
     <main></main>
     <br>
     <br>
-    <br> 
+  </form>
     <footer><center>Ingresa | Registrate | Ayuda</center></footer>
     <script src="index.js" type="module"></script>
   </section>

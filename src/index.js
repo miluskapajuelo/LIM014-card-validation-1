@@ -2,28 +2,31 @@ import validator from './validator.js';
 
 console.log(validator);
 
-var validacion1;
-var letsplay = document.getElementById('validar');
+let validacion1;
+let validacion2;
+let letsplay = document.getElementById('validar');
 letsplay.addEventListener("click", press1);
 
 function press1(){
   validacion1 = document.getElementById('card').value;
   
+  
   if(validacion1){
     if(validacion1.length<16){
-      alert("Este campo requiere 16 dígitos")
-      
+      //alert("Complete los datos");
+      //document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos "
+      return press1;
     }
     else{
     document.getElementById('validar').innerHTML= validacion1
     }
-      
+
     //console.log(typeof(validacion1)) ;
-    var a = validacion1.split("").reverse();
+    const a = validacion1.split("").reverse();
     console.log(a[0]);
     console.log(a[a.length-1]);
     console.log(a.length);
-    var total=[];
+    const total=[];
 
     for(var i=0; i<a.length; i++){
       if(i%2==0){
@@ -101,23 +104,12 @@ card.addEventListener("keypress", function soloNumeros(e){
       if (key < 48 || key > 57) {
         e.preventDefault();
        }
-    })
+      })
 
-
-var dni = document.getElementById("dni");
-dni.addEventListener("keypress", function soloNumeros(o){
-      var key1 = dni.event ? o.which : o.keyCode;
-      if (key1 < 48 || key1 > 57) {
-        o.preventDefault();
-       }
-    })
-
-
+      
 var mostrar= false;
 var eye = document.getElementById("eye");
-
 eye.addEventListener("click", function toggle(){
-  
   if(mostrar){
     document.getElementById("card").setAttribute("type","password");
     mostrar=false;
