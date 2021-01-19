@@ -18,10 +18,12 @@ h3{
 }
 .screen {
     background: #FFFFFF;
-    border-radius: 1.5%;
     margin-top: 40px;
     width: 40%;
-    padding: 20px
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(119, 118, 118, 0.815);
+    
    
   }
 #validar, #entendido1, #entendido2 {
@@ -93,4 +95,12 @@ span{
 .fa{
   font-size: 20px;
   color: #aaa549;
+}
+footer {
+  background-color: #40e0d0;
+  text-align: justify;
+} 
+aside {
+  background-color: ;
+  text-align: justify;
 }

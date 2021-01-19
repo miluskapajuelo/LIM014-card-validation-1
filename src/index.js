@@ -2,31 +2,31 @@ import validator from './validator.js';
 
 console.log(validator);
 
-let validacion1;
+var validacion1;
 let validacion2;
-let letsplay = document.getElementById('validar');
-letsplay.addEventListener("click", press1);
+var letsplay = document.getElementById('validar');
+letsplay.addEventListener("click", isValid);
 
-function press1(){
+function isValid(){
   validacion1 = document.getElementById('card').value;
-  
-  
+    
   if(validacion1){
     if(validacion1.length<16){
       //alert("Complete los datos");
       //document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos "
-      return press1;
+      return isValid;
     }
     else{
-    document.getElementById('validar').innerHTML= validacion1
+    document.getElementById('validar').innerHTML= validacion1;
+    
     }
 
     //console.log(typeof(validacion1)) ;
-    const a = validacion1.split("").reverse();
+    var a = validacion1.split("").reverse();
     console.log(a[0]);
     console.log(a[a.length-1]);
     console.log(a.length);
-    const total=[];
+    var total=[];
 
     for(var i=0; i<a.length; i++){
       if(i%2==0){
@@ -42,12 +42,9 @@ function press1(){
       else{
         total.push(parseInt(a[i]));
       }
-     }
-    const guardar = validacion1.slice(-4);
-    console.log("PRUEBA" + validacion1.slice(-4)) ;
+     }    
     
-    
-    let sumatotal = 0;
+    var sumatotal = 0;
     total.forEach(function(a){sumatotal += a;});
     console.log(sumatotal);
 
@@ -98,14 +95,14 @@ function press3(){
     document.getElementById("inicio").classList.remove("hide");
 }
 
+ 
 var card = document.getElementById("card");
 card.addEventListener("keypress", function soloNumeros(e){
-      var key = card.event ? e.which : e.keyCode;
+      const key = card.event ? e.which : e.keyCode;
       if (key < 48 || key > 57) {
         e.preventDefault();
        }
       })
-
       
 var mostrar= false;
 var eye = document.getElementById("eye");
@@ -118,5 +115,5 @@ eye.addEventListener("click", function toggle(){
     document.getElementById("card").setAttribute("type","text");
     mostrar=true;
   } 
-})
+}) 
 
