@@ -1,15 +1,15 @@
 import validator from './validator.js';
 
-console.log(validator);
+console.log(validator); 
 
 var validacion1;
-let validacion2;
+
 var letsplay = document.getElementById('validar');
 letsplay.addEventListener("click", isValid);
 
 function isValid(){
   validacion1 = document.getElementById('card').value;
-    
+   
   if(validacion1){
     if(validacion1.length<16){
       //alert("Complete los datos");
@@ -17,10 +17,20 @@ function isValid(){
       return isValid;
     }
     else{
-    document.getElementById('validar').innerHTML= validacion1;
+      
+      let k=validacion1;
+      let t= k.slice(0,k.length -4)
+      let mia = []
+      for(var j =0;j<t.length;j++){
+        mia.push(t.replace(t,"#"))
+      }
+      let pass = mia.join("") + k.slice(-4);
+      
+      document.getElementById('mensaj1').innerHTML= "Dígitos: " + pass;
+      document.getElementById('mensaj2').innerHTML= "Dígitos: " + pass;
     
     }
-
+    
     //console.log(typeof(validacion1)) ;
     var a = validacion1.split("").reverse();
     console.log(a[0]);
@@ -67,7 +77,7 @@ function isValid(){
       document.getElementById('txtnew2').innerHTML= "La tarjeta no es válida ";
     }
     }
-  }
+  };
 
 var retorna;
 var letsplay2 = document.getElementById('entendido1');
@@ -80,7 +90,7 @@ function press2(){
 
     document.getElementById("inicio").classList.add("display");
     document.getElementById("inicio").classList.remove("hide");
-}
+};
 
 
 var letsplay3 = document.getElementById('entendido2');
@@ -93,16 +103,16 @@ function press3(){
 
     document.getElementById("inicio").classList.add("display");
     document.getElementById("inicio").classList.remove("hide");
-}
+};
 
  
 var card = document.getElementById("card");
-card.addEventListener("keypress", function soloNumeros(e){
-      const key = card.event ? e.which : e.keyCode;
+ card.addEventListener("keypress", function soloNumeros(e){
+  const key = card.event ? e.which : e.keyCode;
       if (key < 48 || key > 57) {
         e.preventDefault();
        }
-      })
+      }) 
       
 var mostrar= false;
 var eye = document.getElementById("eye");
