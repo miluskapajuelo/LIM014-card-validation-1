@@ -10,10 +10,8 @@
   <body> 
     
   <section id="inicio" class="display screen">
-    
-    <header></header>
-    <h3><center>Ingresa a tu cuenta</center></h3>
-    <form name="myform">
+    <form>
+    <header><h3><center>Ingresa a tu cuenta</center></h3></header>
     <input type="password" id = "card"  placeholder="Número de tarjeta" maxlength= "16"  autocomplete="off" required>
     <!--<p id="mensaje1"></p>-->
     <span>
@@ -35,20 +33,19 @@
     <main></main>
     <br>
     <br>
-    </form>
+  </form>
+  <footer><center>Ingresa | Registrate | Ayuda</center></footer>
+  <script src="index.js" type="module"></script>
+ </section>
 
-    <footer><center>Ingresa | Registrate | Ayuda</center></footer>
-    <script src="index.js" type="module"></script>
-  </section>
-
-<section id="incorrecto" class="hide screen">
-    <header ></header>
-    <h2>Intentalo de nuevo</h2>
+ <section id="incorrecto" class="hide screen">
+    <header ><h2>Intentalo de nuevo</h2></header>
+    
     <p id="txtnew2"></p>
     <a id="mensaj1"></a>
 
     <input type="button" value = "Entendido" id="entendido1">
-</section>  
+ </section>  
 
 
 <section id="correcto" class="hide screen">

@@ -1,10 +1,10 @@
 import validator from './validator.js';
 
-var letsplay = document.getElementById('validar');
-var elemento = document.getElementById("checkbox").checked;
+let letsplay = document.getElementById('validar');
+let elemento = document.getElementById("checkbox").checked;
 
 letsplay.addEventListener("click", ()=>{
-var validacion1 = document.getElementById('card').value;
+let validacion1 = document.getElementById('card').value;
 let valido = validator.isValid(validacion1)
 console.log(typeof(validacion1))
 
@@ -60,8 +60,7 @@ console.log(typeof(validacion1))
     }
     }});
 
-var retorna;
-var letsplay2 = document.getElementById('entendido1');
+let letsplay2 = document.getElementById('entendido1');
 letsplay2.addEventListener("click", press2);
 
 function press2(){
@@ -74,7 +73,7 @@ function press2(){
 };
 
 
-var letsplay3 = document.getElementById('entendido2');
+let letsplay3 = document.getElementById('entendido2');
 letsplay3.addEventListener("click", press3);
 
 function press3(){
@@ -87,16 +86,16 @@ function press3(){
 };
 
  
-var card = document.getElementById("card");
+let card = document.getElementById("card");
  card.addEventListener("keypress", function soloNumeros(e){
-  const key = card.event ? e.which : e.keyCode;
+  var key = card.event ? e.which : e.keyCode;
       if (key < 48 || key > 57) {
         e.preventDefault();
        }
       }); 
       
-var mostrar= false;
-var eye = document.getElementById("eye");
+let mostrar= false;
+let eye = document.getElementById("eye");
 eye.addEventListener("click", function toggle(){
   if(mostrar){
     document.getElementById("card").setAttribute("type","password");

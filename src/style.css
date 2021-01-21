@@ -13,7 +13,7 @@ body{
     background-image: url("playita.png");    
     background-size:auto;
   }
-h3{
+header{
   color: rgb(9, 51, 9);
 }
 .screen {
