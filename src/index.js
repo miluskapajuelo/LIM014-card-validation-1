@@ -5,11 +5,13 @@ console.log(validator);
 var validacion1;
 
 var letsplay = document.getElementById('validar');
+var elemento = document.getElementById("checkbox").checked;
+
 letsplay.addEventListener("click", isValid);
 
 function isValid(){
+  
   validacion1 = document.getElementById('card').value;
-   
   if(validacion1){
     if(validacion1.length<16){
       //alert("Complete los datos");
@@ -66,6 +68,16 @@ function isValid(){
       document.getElementById("correcto").classList.remove("hide");
 
       document.getElementById('txtnew1').innerHTML= "La tarjeta es válida";
+
+      if(elemento==false){
+        document.getElementById("card").value="";
+          document.getElementById("dni").value="";
+          return false
+          }
+        else{
+        return true
+
+        }
       }
     else{
       document.getElementById("inicio").classList.add("hide");
@@ -75,9 +87,17 @@ function isValid(){
       document.getElementById("incorrecto").classList.remove("hide");
 
       document.getElementById('txtnew2').innerHTML= "La tarjeta no es válida ";
+
+      if(elemento==false){
+        document.getElementById("card").value="";
+          document.getElementById("dni").value="";
+          return false
+          }
+        else{
+        return true
+        }
     }
-    }
-  };
+    }};
 
 var retorna;
 var letsplay2 = document.getElementById('entendido1');
@@ -112,7 +132,7 @@ var card = document.getElementById("card");
       if (key < 48 || key > 57) {
         e.preventDefault();
        }
-      }) 
+      }); 
       
 var mostrar= false;
 var eye = document.getElementById("eye");
@@ -124,6 +144,4 @@ eye.addEventListener("click", function toggle(){
   else{
     document.getElementById("card").setAttribute("type","text");
     mostrar=true;
-  } 
-}) 
-
+  }})
