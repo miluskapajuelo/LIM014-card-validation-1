@@ -1,66 +1,27 @@
 import validator from './validator.js';
 
-console.log(validator); 
-
-var validacion1;
-
 var letsplay = document.getElementById('validar');
 var elemento = document.getElementById("checkbox").checked;
 
-letsplay.addEventListener("click", isValid);
+letsplay.addEventListener("click", ()=>{
+var validacion1 = document.getElementById('card').value;
+let valido = validator.isValid(validacion1)
+console.log(typeof(validacion1))
 
-function isValid(){
-  
-  validacion1 = document.getElementById('card').value;
   if(validacion1){
     if(validacion1.length<16){
-      //alert("Complete los datos");
       //document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos "
       return isValid;
     }
     else{
+      let maskify = validator.maskify(validacion1)      
       
-      let k=validacion1;
-      let t= k.slice(0,k.length -4)
-      let mia = []
-      for(var j =0;j<t.length;j++){
-        mia.push(t.replace(t,"#"))
-      }
-      let pass = mia.join("") + k.slice(-4);
-      
-      document.getElementById('mensaj1').innerHTML= "Dígitos: " + pass;
-      document.getElementById('mensaj2').innerHTML= "Dígitos: " + pass;
+      document.getElementById('mensaj1').innerHTML= "Dígitos: " + maskify;
+      document.getElementById('mensaj2').innerHTML= "Dígitos: " + maskify;
     
     }
-    
-    //console.log(typeof(validacion1)) ;
-    var a = validacion1.split("").reverse();
-    console.log(a[0]);
-    console.log(a[a.length-1]);
-    console.log(a.length);
-    var total=[];
 
-    for(var i=0; i<a.length; i++){
-      if(i%2==0){
-        var d = a[i]*2;
-        if(d >=10){
-          var f= d.toString();
-          var suma = parseInt(f[0]) +parseInt(f[1]);
-        }
-        else{
-          total.push(d); 
-        }
-      }
-      else{
-        total.push(parseInt(a[i]));
-      }
-     }    
-    
-    var sumatotal = 0;
-    total.forEach(function(a){sumatotal += a;});
-    console.log(sumatotal);
-
-    if(sumatotal%10==0){
+    if(valido){
       document.getElementById("inicio").classList.add("hide");
       document.getElementById("inicio").classList.remove("display");
   
@@ -97,7 +58,7 @@ function isValid(){
         return true
         }
     }
-    }};
+    }});
 
 var retorna;
 var letsplay2 = document.getElementById('entendido1');
@@ -145,3 +106,6 @@ eye.addEventListener("click", function toggle(){
     document.getElementById("card").setAttribute("type","text");
     mostrar=true;
   }})
+
+  
+console.log(validator); 
