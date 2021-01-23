@@ -12,6 +12,7 @@ body{
     font-family: 'Raleway', sans-serif;
     background-image: url("playita.png");    
     background-size:auto;
+    opacity: 0.87;
   }
 header{
   color: rgb(9, 51, 9);
@@ -53,7 +54,7 @@ header{
   }
 
 #card{
-    margin-top: 40px;
+    margin-top: 20px;
     width: 91%;
     padding: 3px;
     border:none;
@@ -69,7 +70,7 @@ header{
 
 
 #dni{
-    margin-top: 10px;
+    margin-top: 23px;
     width: 70%;
     padding: 3px;
     border:none;
@@ -88,7 +89,7 @@ header{
 span{
   position: absolute;
   left: 370px;
-  top: 34%;
+  top: 32%;
   cursor: pointer;
 }
 
@@ -98,7 +99,13 @@ span{
 }
 footer{
   text-align: justify;
+  margin-top: 40px;
+
 } 
 a{
   font-size: 15px;
 }
+h2{
+  font-size: 24px;
+}
+

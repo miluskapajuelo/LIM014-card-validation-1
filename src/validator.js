@@ -10,32 +10,39 @@ const validator = {
                 if(d >=10){
                     let f= d.toString();
                     let suma = parseInt(f[0]) +parseInt(f[1]);
+                    total.push(suma);
+                    
                 }
                 else{
-                    total.push(d);}}
+                    total.push(d);
+                    
+                }}
             else{
                 total.push(parseInt(a[i]));
+                
             }
         }
         let sumatotal = 0;
         total.forEach(function(a){sumatotal += a;});
 
-        if(sumatotal%10==0){
-            return true 
+        if(sumatotal%10==0 && sumatotal != 0){
+            return true;
         }
         else{
-            return false
+            return false;
         }
+        
     },
 
     maskify : function(k) {
           
-    let t= k.slice(0,k.length -4)
-    let mia = []
+    let t= k.slice(0,k.length -4);
+    let mia = [];
     for(let j =0;j<t.length;j++){
-      mia.push(t.replace(t,"#"))
+      mia.push(t.replace(t,"#"));
     }
     let pass = mia.join("") + k.slice(-4);
-    return pass
+    return pass;
+    
 }};
 export default validator

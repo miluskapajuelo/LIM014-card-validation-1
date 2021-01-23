@@ -1,44 +1,27 @@
 {
-  "name": "card-validation",
-  "version": "1.0.0",
-  "main": "src/index.html",
-  "license": "MIT",
-  "scripts": {
-    "htmlhint": "htmlhint src/*.html test/*.html",
-    "eslint": "eslint --ext .js src/ test/",
-    "pretest": "npm run eslint && npm run htmlhint",
-    "test": "jest --verbose --coverage",
-    "open-coverage-report": "opener ./coverage/lcov-report/index.html",
-    "start": "serve ./src",
-    "deploy": "gh-pages -d src"
-  },
-  "dependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
-    "babel-jest": "^26.6.1",
-    "eslint": "^7.12.1",
-    "gh-pages": "^3.1.0",
-    "htmlhint": "^0.14.1",
-    "maskify": "^1.0.1",
-    "opener": "^1.5.1",
-    "serve": "^11.0.0"
-  },
-  "devDependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "jest": "^26.6.3"
-  },
-  "description": "El proyecto es una plataforma web cuya funcionalidad principal es la de validación del número de tarjeta, está dirigido al rubro bancario",
-  "directories": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/miluskapajuelo/LIM014-card-validation-1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/miluskapajuelo/LIM014-card-validation-1/issues"
-  },
-  "homepage": "https://github.com/miluskapajuelo/LIM014-card-validation-1#readme"
-}
+    "name": "card-validation",
+    "version": "1.0.0",
+    "main": "src/index.html",
+    "license": "MIT",
+    "scripts": {
+      "htmlhint": "htmlhint src/*.html test/*.html",
+      "eslint": "eslint --ext .js src/ test/",
+      "pretest": "npm run eslint && npm run htmlhint",
+      "open-coverage-report": "opener ./coverage/lcov-report/index.html",
+      "start": "serve ./src",
+      "deploy": "gh-pages -d src",
+      "test": "jest --verbose --coverage"
+    },
+    "dependencies": {
+      "@babel/core": "^7.6.2",
+      "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+      "babel-jest": "^26.6.1",
+      "eslint": "^7.12.1",
+      "gh-pages": "^3.1.0",
+      "htmlhint": "^0.14.1",
+      "jest": "^26.6.1",
+      "opener": "^1.5.1",
+      "serve": "^11.0.0"
+    }
+  }
+

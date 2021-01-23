@@ -6,12 +6,11 @@ let elemento = document.getElementById("checkbox").checked;
 letsplay.addEventListener("click", ()=>{
 let validacion1 = document.getElementById('card').value;
 let valido = validator.isValid(validacion1)
-console.log(typeof(validacion1))
 
   if(validacion1){
     if(validacion1.length<16){
       //document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos "
-      return isValid;
+      return false;
     }
     else{
       let maskify = validator.maskify(validacion1)      
@@ -33,7 +32,6 @@ console.log(typeof(validacion1))
       if(elemento==false){
         document.getElementById("card").value="";
           document.getElementById("dni").value="";
-          return false
           }
         else{
         return true
@@ -52,38 +50,33 @@ console.log(typeof(validacion1))
       if(elemento==false){
         document.getElementById("card").value="";
           document.getElementById("dni").value="";
-          return false
           }
         else{
-        return true
+        return true;
         }
     }
     }});
 
 let letsplay2 = document.getElementById('entendido1');
-letsplay2.addEventListener("click", press2);
-
-function press2(){
+letsplay2.addEventListener("click", function press2(){
        
     document.getElementById("incorrecto").classList.add("hide");
     document.getElementById("incorrecto").classList.remove("display");
 
     document.getElementById("inicio").classList.add("display");
     document.getElementById("inicio").classList.remove("hide");
-};
+});
 
 
 let letsplay3 = document.getElementById('entendido2');
-letsplay3.addEventListener("click", press3);
-
-function press3(){
+letsplay3.addEventListener("click", function press3(){
        
     document.getElementById("correcto").classList.add("hide");
     document.getElementById("correcto").classList.remove("display");
 
     document.getElementById("inicio").classList.add("display");
     document.getElementById("inicio").classList.remove("hide");
-};
+});
 
  
 let card = document.getElementById("card");
@@ -104,7 +97,6 @@ eye.addEventListener("click", function toggle(){
   else{
     document.getElementById("card").setAttribute("type","text");
     mostrar=true;
-  }})
-
+  }});
   
 console.log(validator); 
