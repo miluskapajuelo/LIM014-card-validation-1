@@ -1,15 +1,16 @@
 import validator from './validator.js';
 
 let letsplay = document.getElementById('validar');
-let elemento = document.getElementById("checkbox").checked;
+
 
 letsplay.addEventListener("click", ()=>{
 let validacion1 = document.getElementById('card').value;
+let dni = document.getElementById("dni").value
 let valido = validator.isValid(validacion1)
-
-  if(validacion1){
-    if(validacion1.length<16){
-      //document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos "
+  
+   if(dni){ 
+    if(validacion1.length<16 || dni.length<8){
+      /* document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos " */
       return false;
     }
     else{
@@ -20,7 +21,7 @@ let valido = validator.isValid(validacion1)
     
     }
 
-    if(valido){
+    if(valido == true){
       document.getElementById("inicio").classList.add("hide");
       document.getElementById("inicio").classList.remove("display");
   
@@ -29,14 +30,6 @@ let valido = validator.isValid(validacion1)
 
       document.getElementById('txtnew1').innerHTML= "La tarjeta es válida";
 
-      if(elemento==false){
-        document.getElementById("card").value="";
-          document.getElementById("dni").value="";
-          }
-        else{
-        return true
-
-        }
       }
     else{
       document.getElementById("inicio").classList.add("hide");
@@ -47,15 +40,9 @@ let valido = validator.isValid(validacion1)
 
       document.getElementById('txtnew2').innerHTML= "La tarjeta no es válida ";
 
-      if(elemento==false){
-        document.getElementById("card").value="";
-          document.getElementById("dni").value="";
-          }
-        else{
-        return true;
-        }
     }
-    }});
+    }
+    });
 
 let letsplay2 = document.getElementById('entendido1');
 letsplay2.addEventListener("click", function press2(){
@@ -86,6 +73,14 @@ let card = document.getElementById("card");
         e.preventDefault();
        }
       }); 
+
+let dni = document.getElementById("dni");
+ dni.addEventListener("keypress", function soloNumeros(o){
+  var key = card.event ? o.which : o.keyCode;
+      if (key < 48 || key > 57) {
+        o.preventDefault();
+       }
+      }); 
       
 let mostrar= false;
 let eye = document.getElementById("eye");
@@ -99,4 +94,5 @@ eye.addEventListener("click", function toggle(){
     mostrar=true;
   }});
   
+
 console.log(validator); 
