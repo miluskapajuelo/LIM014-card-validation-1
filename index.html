@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tarjeta de crédito válida</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body> 
+    
+  <section id="inicio" class="display screen">
+    <form>
+    <header><h2><center>Ingresa a tu cuenta</center></h2></header>
+    <input type="password" id = "card"  placeholder="Número de tarjeta" maxlength= "16"  autocomplete="off" required>
+    <span>
+      <i class="fa fa-eye" aria-hidden="true" id="eye"></i>
+    </span>  
+    <!-- <p id="mensaje1"></p> -->
+    <br>
+    <select name="documento" id="documento" >
+      <option value="1">DNI</option>
+      <option value="2">CE</option>
+      <option value="2">PASS</option>
+    </select>
+    <input type="text" id = "dni" name="dni" maxlength="8"  placeholder="Número de documento" autocomplete="off" required><br>
+    <br>
+    <input type="button" class="button" value = "validar" id="validar" >
+    <br>
+    <br>
+    <input id="checkbox" type="checkbox" name = "recordar" value="Recordar los datos"><label>Recordar los datos</label>
+    <br>
+    <br>
+
+  </form>
+  <footer><center>Ingresa | Registrate | Ayuda</center></footer>
+  <script src="index.js" type="module"></script>
+  </section> 
+
+
+
+ <section id="incorrecto" class="hide screen">
+    <header ><h2>Intentalo de nuevo</h2></header>
+    
+    <p id="txtnew2"></p>
+    <a id="mensaj1"></a>
+
+    <input type="button" value = "Entendido" id="entendido1">
+ </section>  
+
+<section id="correcto" class="hide screen">
+    <header ></header>
+    <h2>¡Felicidades!</h2>
+    <p id="txtnew1"></p>
+    <a id="mensaj2"></a>
+
+    <input type="button" value = "Entendido" id="entendido2">
+  
+</section>  
+</body>
+</html>
