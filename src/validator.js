@@ -5,7 +5,7 @@ const validator = {
         let total=[];
         
         for(let i=0; i<a.length; i++){
-            if(i%2==0){
+            if(i%2!=0){
                 let d = a[i]*2;
                 if(d >=10){
                     let f= d.toString();

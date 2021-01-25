@@ -1,20 +1,21 @@
 import validator from './validator.js';
 
 let letsplay = document.getElementById('validar');
-
-
 letsplay.addEventListener("click", ()=>{
-let validacion1 = document.getElementById('card').value;
+
 let dni = document.getElementById("dni").value
+let validacion1 = document.getElementById('card').value;
 let valido = validator.isValid(validacion1)
+
   
    if(dni){ 
-    if(validacion1.length<16 || dni.length<8){
+    if(/* validacion1.length<16 || */ dni.length<8){
       /* document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos " */
       return false;
     }
     else{
-      let maskify = validator.maskify(validacion1)      
+
+      let maskify = validator.maskify(validacion1);      
       
       document.getElementById('mensaj1').innerHTML= "Dígitos: " + maskify;
       document.getElementById('mensaj2').innerHTML= "Dígitos: " + maskify;
@@ -44,6 +45,7 @@ let valido = validator.isValid(validacion1)
     }
     });
 
+
 let letsplay2 = document.getElementById('entendido1');
 letsplay2.addEventListener("click", function press2(){
        
@@ -52,6 +54,10 @@ letsplay2.addEventListener("click", function press2(){
 
     document.getElementById("inicio").classList.add("display");
     document.getElementById("inicio").classList.remove("hide");
+
+    document.getElementById("card").value = "";
+    document.getElementById("dni").value = "";
+    
 });
 
 
@@ -63,6 +69,9 @@ letsplay3.addEventListener("click", function press3(){
 
     document.getElementById("inicio").classList.add("display");
     document.getElementById("inicio").classList.remove("hide");
+    
+    document.getElementById("card").value = "";
+    document.getElementById("dni").value = "";
 });
 
  

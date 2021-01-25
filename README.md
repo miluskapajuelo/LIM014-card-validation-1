@@ -1,13 +1,13 @@
 # Proyecto Card Validation
 
 ## Índice
-## 0. Resumen del proyecto
-## 1. Investigación UX
-## 1.1. Usuarios los objetivos en relación al producto.
-## 1.2. Cómo el proyecto soluciona los problemas/necesidades de los usuarios
-## 1.3. Foto de prototipo en papel
-## 1.4. Resumen de feedback e indicaciones de mejoras realizadas
-## 2. Prototipo FIGMA
+### 0. Resumen del proyecto
+### 1. Investigación UX
+### 1.1. Usuarios los objetivos en relación al producto.
+### 1.2. Cómo el proyecto soluciona los problemas/necesidades de los usuarios
+### 1.3. Foto de prototipo en papel
+### 1.4. Resumen de feedback e indicaciones de mejoras realizadas
+### 2. Prototipo FIGMA
 
 ## 0. Resumen del proyecto
 CARD VALIDATION
