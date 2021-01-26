@@ -26,7 +26,7 @@ El proyecto es una plataforma web cuya funcionalidad principal es la de validaci
 - Reduce costos operativos
 
 ### 1.3. Luego colocarás la foto de tu primer prototipo en papel.__
-https://github.com/miluskapajuelo/LIM014-card-validation-1/src/prototipo1.png
+https://user-images.githubusercontent.com/71782042/105852149-15d48a00-5fb2-11eb-9270-c2c8dc6969f3.png
 
 ### 1.4. Agregar un resumen del feedback recibido indicando las mejoras a realizar.__
 

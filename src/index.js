@@ -1,39 +1,41 @@
 import validator from './validator.js';
 
-let form = document.getElementById("form")
+/* Agregamos funcionalidad al boton para mostrar que está activo */
+const form = document.getElementById("form")
 form.addEventListener("input",() =>{
   let dni = document.getElementById("dni").value
-  let validacion1 = document.getElementById('card').value;
-  let validar = document.getElementById("validar")
-  if(validacion1.length ==16 && dni.length==8){
+  let InputNumber = document.getElementById('card').value;
+  const validar = document.getElementById("validar")
+  if(InputNumber.length ==16 && dni.length==8){
     validar.removeAttribute("disabled")
   } else{
     validar.setAttribute("disabled","disabled");
   }
 });
 
-let letsplay = document.getElementById('validar');
-letsplay.addEventListener("click", ()=>{
+/* Con el click del botón "enviar" para utilizar las funciones */
+const validar = document.getElementById('validar');
+validar.addEventListener("click", ()=>{
 
 let dni = document.getElementById("dni").value
-let validacion1 = document.getElementById('card').value;
-let valido = validator.isValid(validacion1)
+let InputNumber = document.getElementById('card').value;
+let valido = validator.isValid(InputNumber)
 
   
    if(dni){ 
-    if(validacion1.length<16 || dni.length<8){
+    if(InputNumber.length<16 || dni.length<8){
       /* document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos " */
       return false;
     }
     else{
 
-      let maskify = validator.maskify(validacion1);      
+      let maskify = validator.maskify(InputNumber);      
       
       document.getElementById('mensaj1').innerHTML= "Dígitos: " + maskify;
       document.getElementById('mensaj2').innerHTML= "Dígitos: " + maskify;
     
     }
-
+/* Se muestra la página y se ocultan páginas anteriores */
     if(valido == true){
       document.getElementById("inicio").classList.add("hide");
       document.getElementById("inicio").classList.remove("display");
@@ -56,9 +58,9 @@ let valido = validator.isValid(validacion1)
     }
     }
     });
-
-let letsplay2 = document.getElementById('entendido1');
-letsplay2.addEventListener("click", function press2(){
+/* Se habilita un botón para regresar el inicio */
+const validar2 = document.getElementById('entendido1');
+validar2.addEventListener("click", function press2(){
        
     document.getElementById("incorrecto").classList.add("hide");
     document.getElementById("incorrecto").classList.remove("display");
@@ -73,9 +75,9 @@ letsplay2.addEventListener("click", function press2(){
     
 });
 
-
-let letsplay3 = document.getElementById('entendido2');
-letsplay3.addEventListener("click", function press3(){
+/* Se habilita un botón para regresar el inicio */
+const validar3 = document.getElementById('entendido2');
+validar3.addEventListener("click", function press3(){
        
     document.getElementById("correcto").classList.add("hide");
     document.getElementById("correcto").classList.remove("display");
@@ -89,8 +91,8 @@ letsplay3.addEventListener("click", function press3(){
     document.getElementById("validar").setAttribute("disabled","disabled");
 });
 
- 
-let card = document.getElementById("card");
+ /* Sólo se aceptan valores numéricos en "card" */
+const card = document.getElementById("card");
  card.addEventListener("keypress", function soloNumeros(e){
   var key = card.event ? e.which : e.keyCode;
       if (key < 48 || key > 57) {
@@ -98,16 +100,18 @@ let card = document.getElementById("card");
        }
       }); 
 
-let dni = document.getElementById("dni");
+/* Sólo se aceptan valores numéricos en "DNI" */
+const dni = document.getElementById("dni");
  dni.addEventListener("keypress", function soloNumeros(o){
   var key = card.event ? o.which : o.keyCode;
       if (key < 48 || key > 57) {
         o.preventDefault();
        }
       }); 
-      
+
+/* Se muestran los valores del input password */
 let mostrar= false;
-let eye = document.getElementById("eye");
+const eye = document.getElementById("eye");
 eye.addEventListener("click", function toggle(){
   if(mostrar){
     document.getElementById("card").setAttribute("type","password");
