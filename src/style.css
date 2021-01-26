@@ -151,3 +151,9 @@ h1{
   text-align: right;
   vertical-align: -80px
 }
+i{
+  position: absolute;
+  left: 370px;
+  top: 32%;
+  cursor: pointer;
+}
