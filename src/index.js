@@ -1,5 +1,17 @@
 import validator from './validator.js';
 
+let form = document.getElementById("form")
+form.addEventListener("input",() =>{
+  let dni = document.getElementById("dni").value
+  let validacion1 = document.getElementById('card').value;
+  let validar = document.getElementById("validar")
+  if(validacion1.length ==16 && dni.length==8){
+    validar.removeAttribute("disabled")
+  } else{
+    validar.setAttribute("disabled","disabled");
+  }
+});
+
 let letsplay = document.getElementById('validar');
 letsplay.addEventListener("click", ()=>{
 
@@ -9,7 +21,7 @@ let valido = validator.isValid(validacion1)
 
   
    if(dni){ 
-    if(/* validacion1.length<16 || */ dni.length<8){
+    if(validacion1.length<16 || dni.length<8){
       /* document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos " */
       return false;
     }
@@ -45,7 +57,6 @@ let valido = validator.isValid(validacion1)
     }
     });
 
-
 let letsplay2 = document.getElementById('entendido1');
 letsplay2.addEventListener("click", function press2(){
        
@@ -57,6 +68,8 @@ letsplay2.addEventListener("click", function press2(){
 
     document.getElementById("card").value = "";
     document.getElementById("dni").value = "";
+
+    validar.setAttribute("disabled","disabled");
     
 });
 
@@ -72,6 +85,8 @@ letsplay3.addEventListener("click", function press3(){
     
     document.getElementById("card").value = "";
     document.getElementById("dni").value = "";
+
+    validar.setAttribute("disabled","disabled");
 });
 
  
