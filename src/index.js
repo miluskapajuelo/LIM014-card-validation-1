@@ -69,7 +69,7 @@ letsplay2.addEventListener("click", function press2(){
     document.getElementById("card").value = "";
     document.getElementById("dni").value = "";
 
-    validar.setAttribute("disabled","disabled");
+    document.getElementById("validar").setAttribute("disabled","disabled");
     
 });
 
@@ -86,7 +86,7 @@ letsplay3.addEventListener("click", function press3(){
     document.getElementById("card").value = "";
     document.getElementById("dni").value = "";
 
-    validar.setAttribute("disabled","disabled");
+    document.getElementById("validar").setAttribute("disabled","disabled");
 });
 
  
