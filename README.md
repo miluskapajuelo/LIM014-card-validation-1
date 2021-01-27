@@ -32,7 +32,8 @@ https://user-images.githubusercontent.com/71782042/105852149-15d48a00-5fb2-11eb-
 
 - Resumen del feedback
  * Colocar la ventana con transparencia
- * Cuando esté lista la info el botón debe    
+ * Mostrar un cambio en el color del boton cuando esté habilitado
+ * Agregar información sobre la página (rubro banca)
 
 
 ## 2. Prototipo FIGMA

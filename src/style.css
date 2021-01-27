@@ -53,7 +53,7 @@ header{
     background-color: #aaa549; 
   } */
 
-#card{
+#NumberCard{
     margin-top: 20px;
     width: 91%;
     padding: 3px;
@@ -64,7 +64,7 @@ header{
     transition: all 0.3s;
 }
 
-#dni{
+#TypeDocument{
     margin-top: 40px;
     width: 70%;
     padding: 3px;
@@ -74,7 +74,7 @@ header{
     outline: none
 }
 
-#documento{
+#DocumentIdentity{
         margin-top: 10px;
         width: 20%;
         padding: 3px;
@@ -102,9 +102,10 @@ a{
 }
 h1{
   font-size: 24px;
+  text-align: center;
 }
-#validar:disabled,
-#validar[disabled]{
+#btnValidate:disabled,
+#btnValidate[disabled]{
   border-radius: 1.5px;
   background-color: #ada209e8; 
   color: #fff;
@@ -119,7 +120,7 @@ h1{
   transition: all 0.3s;
   opacity: 0.7;
 }
-#validar {
+#btnValidate {
   border-radius: 1.5px;
   background-color: #5c4005e8; 
   color: #fff;

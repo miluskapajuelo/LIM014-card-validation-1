@@ -3,122 +3,122 @@ import validator from './validator.js';
 /* Agregamos funcionalidad al boton para mostrar que está activo */
 const form = document.getElementById("form")
 form.addEventListener("input",() =>{
-  let dni = document.getElementById("dni").value
-  let InputNumber = document.getElementById('card').value;
-  const validar = document.getElementById("validar")
-  if(InputNumber.length ==16 && dni.length==8){
-    validar.removeAttribute("disabled")
-  } else{
-    validar.setAttribute("disabled","disabled");
+  let TypeDocument = document.getElementById("TypeDocument").value
+  let creditCardNumber = document.getElementById('NumberCard').value;
+  const btnValidate = document.getElementById("btnValidate")
+  if(creditCardNumber.length ==16 && TypeDocument.length==8){
+    btnValidate.removeAttribute("disabled")
+  } 
+  else{
+    btnValidate.setAttribute("disabled","disabled");
   }
 });
 
 /* Con el click del botón "enviar" para utilizar las funciones */
-const validar = document.getElementById('validar');
-validar.addEventListener("click", ()=>{
+const btnValidate = document.getElementById('btnValidate');
+btnValidate.addEventListener("click", ()=>{
 
-let dni = document.getElementById("dni").value
-let InputNumber = document.getElementById('card').value;
-let valido = validator.isValid(InputNumber)
+let TypeDocument = document.getElementById("TypeDocument").value
+let creditCardNumber = document.getElementById('NumberCard').value;
+let IsValid1 = validator.isValid(creditCardNumber)
 
   
-   if(dni){ 
-    if(InputNumber.length<16 || dni.length<8){
+   if(TypeDocument){ 
+    if(creditCardNumber.length<16 || TypeDocument.length<8){
       /* document.getElementById('mensaje1').innerHTML= "El campo debe contener 16 dígitos " */
       return false;
     }
     else{
 
-      let maskify = validator.maskify(InputNumber);      
+      let maskify = validator.maskify(creditCardNumber);      
       
-      document.getElementById('mensaj1').innerHTML= "Dígitos: " + maskify;
-      document.getElementById('mensaj2').innerHTML= "Dígitos: " + maskify;
+      document.getElementById('FirstMessage').innerHTML= "Dígitos: " + maskify;
+      document.getElementById('SecondMessage').innerHTML= "Dígitos: " + maskify;
     
     }
 /* Se muestra la página y se ocultan páginas anteriores */
-    if(valido == true){
-      document.getElementById("inicio").classList.add("hide");
-      document.getElementById("inicio").classList.remove("display");
+    if(IsValid1 == true){
+      document.getElementById("FirstPage").classList.add("hide");
+      document.getElementById("FirstPage").classList.remove("display");
   
-      document.getElementById("correcto").classList.add("display");
-      document.getElementById("correcto").classList.remove("hide");
+      document.getElementById("CorrectPage").classList.add("display");
+      document.getElementById("CorrectPage").classList.remove("hide");
 
       document.getElementById('txtnew1').innerHTML= "La tarjeta es válida";
 
       }
     else{
-      document.getElementById("inicio").classList.add("hide");
-      document.getElementById("inicio").classList.remove("display");
+      document.getElementById("FirstPage").classList.add("hide");
+      document.getElementById("FirstPage").classList.remove("display");
   
-      document.getElementById("incorrecto").classList.add("display");
-      document.getElementById("incorrecto").classList.remove("hide");
+      document.getElementById("NotCorrectPage").classList.add("display");
+      document.getElementById("NotCorrectPage").classList.remove("hide");
 
       document.getElementById('txtnew2').innerHTML= "La tarjeta no es válida ";
-
-    }
-    }
-    });
+        }
+      }
+  });
 /* Se habilita un botón para regresar el inicio */
-const validar2 = document.getElementById('entendido1');
-validar2.addEventListener("click", function press2(){
+const ReturnPage1 = document.getElementById('entendido1');
+ReturnPage1.addEventListener("click", function press2(){
        
-    document.getElementById("incorrecto").classList.add("hide");
-    document.getElementById("incorrecto").classList.remove("display");
+    document.getElementById("NotCorrectPage").classList.add("hide");
+    document.getElementById("NotCorrectPage").classList.remove("display");
 
-    document.getElementById("inicio").classList.add("display");
-    document.getElementById("inicio").classList.remove("hide");
+    document.getElementById("FirstPage").classList.add("display");
+    document.getElementById("FirstPage").classList.remove("hide");
 
-    document.getElementById("card").value = "";
-    document.getElementById("dni").value = "";
+    document.getElementById("NumberCard").value = "";
+    document.getElementById("TypeDocument").value = "";
 
-    document.getElementById("validar").setAttribute("disabled","disabled");
+    document.getElementById("btnValidate").setAttribute("disabled","disabled");
     
 });
 
 /* Se habilita un botón para regresar el inicio */
-const validar3 = document.getElementById('entendido2');
-validar3.addEventListener("click", function press3(){
+const ReturnPage2 = document.getElementById('entendido2');
+ReturnPage2.addEventListener("click", function press3(){
        
-    document.getElementById("correcto").classList.add("hide");
-    document.getElementById("correcto").classList.remove("display");
+    document.getElementById("CorrectPage").classList.add("hide");
+    document.getElementById("CorrectPage").classList.remove("display");
 
-    document.getElementById("inicio").classList.add("display");
-    document.getElementById("inicio").classList.remove("hide");
+    document.getElementById("FirstPage").classList.add("display");
+    document.getElementById("FirstPage").classList.remove("hide");
     
-    document.getElementById("card").value = "";
-    document.getElementById("dni").value = "";
+    document.getElementById("NumberCard").value = "";
+    document.getElementById("TypeDocument").value = "";
 
-    document.getElementById("validar").setAttribute("disabled","disabled");
+    document.getElementById("btnValidate").setAttribute("disabled","disabled");
 });
 
  /* Sólo se aceptan valores numéricos en "card" */
-const card = document.getElementById("card");
- card.addEventListener("keypress", function soloNumeros(e){
-  var key = card.event ? e.which : e.keyCode;
+const NumberCard = document.getElementById("NumberCard");
+NumberCard.addEventListener("keypress", function soloNumeros(e){
+  var key = NumberCard.event ? e.which : e.keyCode;
       if (key < 48 || key > 57) {
         e.preventDefault();
        }
-      }); 
+  }); 
 
 /* Sólo se aceptan valores numéricos en "DNI" */
-const dni = document.getElementById("dni");
- dni.addEventListener("keypress", function soloNumeros(o){
-  var key = card.event ? o.which : o.keyCode;
+const TypeDocument = document.getElementById("TypeDocument");
+TypeDocument.addEventListener("keypress", function soloNumeros(o){
+  var key = TypeDocument.event ? o.which : o.keyCode;
       if (key < 48 || key > 57) {
         o.preventDefault();
        }
-      }); 
+    }); 
 
 /* Se muestran los valores del input password */
-let mostrar= false;
+let show= false;
 const eye = document.getElementById("eye");
 eye.addEventListener("click", function toggle(){
-  if(mostrar){
-    document.getElementById("card").setAttribute("type","password");
-    mostrar=false;
+  if(show){
+    document.getElementById("NumberCard").setAttribute("type","password");
+    show=false;
   }   
   else{
-    document.getElementById("card").setAttribute("type","text");
+    document.getElementById("NumberCard").setAttribute("type","text");
     mostrar=true;
   }});
   
