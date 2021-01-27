@@ -44,16 +44,16 @@ header{
   }
   
   #entendido1:hover {
-    background-color: #5c4005e8; 
+    background-color: #352503e8; 
   }
   #entendido2:hover {
-    background-color: #5c4005e8;  
+    background-color: #352503e8;  
   }
 /*   #validar:hover {
     background-color: #aaa549; 
   } */
 
-#card{
+#NumberCard{
     margin-top: 20px;
     width: 91%;
     padding: 3px;
@@ -63,13 +63,8 @@ header{
     outline: none;
     transition: all 0.3s;
 }
-#card input:focus{
-  box-shadow: inset 0 0 3px #2fd072;
-  border-color: #2fd072;
-}
 
-
-#dni{
+#TypeDocument{
     margin-top: 40px;
     width: 70%;
     padding: 3px;
@@ -79,7 +74,7 @@ header{
     outline: none
 }
 
-#documento{
+#DocumentIdentity{
         margin-top: 10px;
         width: 20%;
         padding: 3px;
@@ -105,11 +100,12 @@ footer{
 a{
   font-size: 15px;
 }
-h2{
+h1{
   font-size: 24px;
+  text-align: center;
 }
-#validar:disabled,
-#validar[disabled]{
+#btnValidate:disabled,
+#btnValidate[disabled]{
   border-radius: 1.5px;
   background-color: #ada209e8; 
   color: #fff;
@@ -124,9 +120,9 @@ h2{
   transition: all 0.3s;
   opacity: 0.7;
 }
-#validar {
+#btnValidate {
   border-radius: 1.5px;
-  background-color: #5c4005e8; 
+  background-color: #352503e8; 
   color: #fff;
   padding: 10px;
   font-weight: bold;
@@ -155,4 +151,10 @@ h2{
   font-weight: bold;
   text-align: right;
   vertical-align: -80px
+}
+i{
+  position: absolute;
+  left: 370px;
+  top: 32%;
+  cursor: pointer;
 }

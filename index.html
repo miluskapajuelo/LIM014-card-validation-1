@@ -9,63 +9,58 @@
   </head>
   <body> 
  
-  <section id="inicio" class="display screen">
+  <section id="FirstPage" class="display screen">
     <form id="form">
-    <header><h2><center>Ingresa a tu cuenta</center></h2></header>
-    <input type="password" id = "card"  placeholder="Número de tarjeta" maxlength= "16"  autocomplete="off" required>
-    <span>
-      <i class="fa fa-eye" aria-hidden="true" id="eye"></i>
+    <header><h1>Ingresa a tu cuenta</h1></header>
+    <input type="password" id = "NumberCard"  placeholder="Número de tarjeta" maxlength= "16"  autocomplete="off" required>
+    <span> 
       <p class="texto1">
         BIENVENID@ A TU NUEVA</p> 
       <p class="texto2">
           BANCA POR INTERNET</p> 
-    </span>  
- 
-    <!-- <p id="mensaje1"></p> -->
+    </span> 
+    <i class="fa fa-eye" aria-hidden="true" id="eye"></i>
     <br>
-    <select name="documento" id="documento" >
+    <select name="DocumentIdentity" id="DocumentIdentity" >
       <option value="1">DNI</option>
       <option value="2">CE</option>
       <option value="2">PASS</option>
     </select>
-    <input type="text" id = "dni" name="dni" maxlength="8"  placeholder="Número de documento" autocomplete="off" required><br>
+    <input type="text" id = "TypeDocument" name="TypeDocument" maxlength="8"  placeholder="Número de documento" autocomplete="off" required><br>
     <br>
-    <input type="button" class="button" value = "validar" id="validar" disabled="disabled" >
-    <br>
-    <br>
-    <input id="checkbox" type="checkbox" name = "recordar" value="Recordar los datos"><label>Recordar los datos</label>
+    <input type="button" class="button" value = "Validar" id="btnValidate" disabled="disabled" >
     <br>
     <br>
-
+    <input id="checkbox" type="checkbox" name = "recordar"><label>Recordar los datos</label>
+    <br>
+    <br>
   </form>
   <footer><center>Ingresa | Registrate | Ayuda</center></footer>
   <script src="index.js" type="module"></script>
   </section> 
 
  
- <section id="incorrecto" class="hide screen">
+ <section id="NotCorrectPage" class="hide screen">
     <header ><h2>Intentalo de nuevo</h2></header>
     <span><p class="texto1">
       BANCA POR INTERNET</p> 
     <p class="texto2">
         Conoce el resultado de la validación de tu tarjeta</p></span>
     <p id="txtnew2"></p>
-    <a id="mensaj1"></a>
+    <a id="FirstMessage"></a>
     <br>
     <br>
     <input type="button" value = "Entendido" id="entendido1">
  </section>  
 
-<section id="correcto" class="hide screen">
+<section id="CorrectPage" class="hide screen">
   <span><p class="texto1">
     BANCA POR INTERNET</p> 
   <p class="texto2">
     Conoce el resultado de la validación de tu tarjeta</p> </span>
-    <header ></header>
-
-    <h2>¡Felicidades!</h2>
+    <header><h2>¡Felicidades!</h2></header>
     <p id="txtnew1"></p>
-    <a id="mensaj2"></a>
+    <a id="SecondMessage"></a>
     <br>
     <br>
     <input type="button" value = "Entendido" id="entendido2">

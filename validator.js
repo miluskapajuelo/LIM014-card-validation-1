@@ -1,31 +1,31 @@
 const validator = {
     
-    isValid : function(validacion1) {
-        let a = validacion1.split("").reverse();
-        let total=[];
+    isValid : function(creditCardNumber) {
+        let ReverseString = creditCardNumber.split("").reverse();
+        let totalNumbers=[];
         
-        for(let i=0; i<a.length; i++){
+        for(let i=0; i<ReverseString.length; i++){
             if(i%2!=0){
-                let d = a[i]*2;
-                if(d >=10){
-                    let f= d.toString();
-                    let suma = parseInt(f[0]) +parseInt(f[1]);
-                    total.push(suma);
+                let ByTwo = ReverseString[i]*2;
+                if(ByTwo >=10){
+                    let NumberString= ByTwo.toString();
+                    let SumaDigitos = parseInt(NumberString.charAt(0)) +parseInt(NumberString.charAt(1));
+                    totalNumbers.push(SumaDigitos);
                     
                 }
                 else{
-                    total.push(d);
+                    totalNumbers.push(ByTwo);
                     
                 }}
             else{
-                total.push(parseInt(a[i]));
+                totalNumbers.push(parseInt(ReverseString[i]));
                 
             }
         }
-        let sumatotal = 0;
-        total.forEach(function(a){sumatotal += a;});
+        let SumTotal = 0;
+        totalNumbers.forEach(function(a){SumTotal += a;});
 
-        if(sumatotal%10==0 && sumatotal != 0){
+        if(SumTotal%10==0 && SumTotal != 0){
             return true;
         }
         else{
@@ -34,15 +34,15 @@ const validator = {
         
     },
 
-    maskify : function(k) {
+    maskify : function(creditCardNumber) {
           
-    let t= k.slice(0,k.length -4);
-    let mia = [];
-    for(let j =0;j<t.length;j++){
-      mia.push(t.replace(t,"#"));
+    let ForNumbers= creditCardNumber.slice(0,creditCardNumber.length -4);
+    let NewArra = [];
+    for(let j =0;j<ForNumbers.length;j++){
+        NewArra.push(ForNumbers.replace(ForNumbers,"#"));
     }
-    let pass = mia.join("") + k.slice(-4);
-    return pass;
+    let TotalOutput = NewArra.join("") + creditCardNumber.slice(-4);
+    return TotalOutput;
     
 }};
 export default validator
