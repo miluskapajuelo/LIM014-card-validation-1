@@ -9,7 +9,7 @@ const validator = {
                 let ByTwo = ReverseString[i]*2;
                 if(ByTwo >=10){
                     let NumberString= ByTwo.toString();
-                    let SumaDigitos = parseInt(NumberString[0]) +parseInt(NumberString[1]);
+                    let SumaDigitos = parseInt(NumberString.charAt(0)) +parseInt(NumberString.charAt(1));
                     totalNumbers.push(SumaDigitos);
                     
                 }

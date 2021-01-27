@@ -119,7 +119,7 @@ eye.addEventListener("click", function toggle(){
   }   
   else{
     document.getElementById("NumberCard").setAttribute("type","text");
-    mostrar=true;
+    show=true;
   }});
   
 
